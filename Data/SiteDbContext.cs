@@ -1,6 +1,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using blogs.Model;
+using blogs.Data;
 
 namespace blogs.Data {
     public class SiteDbContext : DbContext {
@@ -12,7 +13,7 @@ namespace blogs.Data {
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
+            modelBuilder.Seed();
         }
 
         public DbSet<Category> Categories { get; set; }

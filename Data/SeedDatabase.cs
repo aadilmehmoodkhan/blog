@@ -3,8 +3,8 @@ using blogs.Model;
 using Microsoft.EntityFrameworkCore;
 
 namespace blogs.Data {
-    public class SeedDatabase {
-        public SeedDatabase(ModelBuilder builder)
+    public static class SeedDatabase {
+        public static void Seed(this ModelBuilder builder)
         {
             builder.Entity<Category>().HasData(
                 new Category{ Id = 1, Name = "ASP.NET", Description = "ASP.NET is the Microsoft's web applications technology", Active = true, CreatedOn = DateTime.Now },

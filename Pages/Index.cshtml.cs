@@ -25,7 +25,9 @@ namespace blogs.Pages
 
         public void OnGet()
         {
+            context.Database.EnsureCreated();
             Categories = context.Categories.ToList();
         }
+
     }
 }
