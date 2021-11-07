@@ -10,6 +10,11 @@ namespace blogs.Data {
 
         }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
+
         public DbSet<Category> Categories { get; set; }
         public DbSet<Article> Articles { get; set; }
         
