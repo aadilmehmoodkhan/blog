@@ -15,6 +15,8 @@ namespace blogs.Model {
 
         public DateTime CreatedOn { get; set; }
 
+        public int LikeCount { get; set; }
+
         public SeoPageAttributes SeoAttributes { get; set; }
     }
 }

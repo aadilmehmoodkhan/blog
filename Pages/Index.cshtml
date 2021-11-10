@@ -1,4 +1,4 @@
-﻿@page
+﻿@page "{handler?}"
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
@@ -6,14 +6,31 @@
 
 <div>
     <h1 class="display-4">Welcome</h1>
+    <div>@Model.Message</div>
 
-    <div>
-        @foreach (var category in Model.Categories)
-        {
-            <div>@category.Name</div>
-        }
-    </div>
-
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <form method="post">
+                <input type="submit" asp-page-handler="LikeCategory" value="Like" />
+                    <input type="submit" asp-page-handler="UnlikeCategory" value="Un-Like" />
+            @foreach (var category in Model.Categories)
+            {
+            <tr>
+                <td>@category.Name</td>
+                <td>
+                    
+                </td>
+            </tr>
+            }
+            </form>
+        </tbody>
+    </table>
 </div>
 
 

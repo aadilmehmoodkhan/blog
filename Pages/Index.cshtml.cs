@@ -14,6 +14,10 @@ namespace blogs.Pages
     {
         private readonly ILogger<IndexModel> _logger;
         private readonly SiteDbContext context;
+        public IList<Category>? Categories { get; private set; }
+
+        [TempData]
+        public string? Message { get; set; }
 
         public IndexModel(ILogger<IndexModel> logger, SiteDbContext context)
         {
@@ -21,12 +25,28 @@ namespace blogs.Pages
             this.context = context;
         }
 
-        public IList<Category> Categories { get; private set; }
+
 
         public void OnGet()
         {
             context.Database.EnsureCreated();
             Categories = context.Categories.ToList();
+        }
+
+        public async Task<IActionResult> OnPostLikeCategoryAsync() {
+            if (!ModelState.IsValid) {
+                return Page();
+            }
+            await Task.Run(() => {});
+            return Page();
+        }
+
+        public async Task<IActionResult> OnPostUnlikeCategoryAsync() {
+            if (!ModelState.IsValid) {
+                return Page();
+            }
+            await Task.Run(() => {});
+            return Page();
         }
 
     }
