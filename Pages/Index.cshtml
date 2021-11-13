@@ -5,30 +5,30 @@
 }
 
 <div>
+    <p></p>
     <h1 class="display-4">Welcome</h1>
     <div>@Model.Message</div>
 
     <table>
         <thead>
             <tr>
+                <th>Actions</th>
                 <th>Name</th>
-                <th></th>
             </tr>
         </thead>
         <tbody>
-            <form method="post">
-                <input type="submit" asp-page-handler="LikeCategory" value="Like" />
-                    <input type="submit" asp-page-handler="UnlikeCategory" value="Un-Like" />
-            @foreach (var category in Model.Categories)
+            @foreach (var category in Model.Categories!)
             {
             <tr>
-                <td>@category.Name</td>
                 <td>
-                    
+                    <form method="post">
+                        <input type="submit" class="btn btn-warning btn-sm" asp-page-handler="LikeCategory" value="Like" /> &nbsp;
+                        <input type="submit" class="btn btn-warning btn-sm" asp-page-handler="UnlikeCategory" value="Un-Like" /> &nbsp;
+                    </form>
                 </td>
+                <td>@category.Name</td>
             </tr>
             }
-            </form>
         </tbody>
     </table>
 </div>

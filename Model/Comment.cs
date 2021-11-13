@@ -6,13 +6,13 @@ namespace blogs.Model {
         public long Id { get; set; }
 
         [Required, StringLength(300)]
-        public string PosterEmail { get; set; }
+        public string? PosterEmail { get; set; }
 
         [Required, StringLength(100)]
-        public string PosterName { get; set; }
+        public string? PosterName { get; set; }
 
         [Required, StringLength(4000)]
-        public string CommentText { get; set; }
+        public string? CommentText { get; set; }
 
         [Required]
         public DateTime PostedOn { get; set; }

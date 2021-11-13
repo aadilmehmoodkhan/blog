@@ -7,19 +7,19 @@ namespace blogs.Model {
         public long Id { get; set; }
 
         [Required, StringLength(500)]
-        public string Title { get; set; }
+        public string? Title { get; set; }
 
         [Required, StringLength(2000)]
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
         public bool Active { get; set; }
 
         public DateTime CreatedOn { get; set; }
 
-        public SeoPageAttributes SeoAttributes { get; set; }
+        public SeoPageAttributes? SeoAttributes { get; set; }
 
-        public IList<Content> ContentItems { get; set; }
+        public IList<Content>? ContentItems { get; set; }
 
-        public IList<Comment> Comments { get; set; }
+        public IList<Comment>? Comments { get; set; }
     }
 }

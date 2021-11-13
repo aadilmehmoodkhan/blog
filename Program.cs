@@ -1,7 +1,11 @@
+using blogs.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddDbContext<SiteDbContext>(options => options.UseInMemoryDatabase("memdb"));
 
 var app = builder.Build();
 

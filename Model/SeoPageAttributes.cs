@@ -6,12 +6,12 @@ namespace blogs.Model {
         public long Id { get; set; }
         
         [Required, StringLength(300)]
-        public string Sludge { get; set; }
+        public string? Sludge { get; set; }
 
         [StringLength(1000)]
-        public string Keywords { get; set; }
+        public string? Keywords { get; set; }
         
         [StringLength(1000)]
-        public string Description { get; set; }
+        public string? Description { get; set; }
     }
 }

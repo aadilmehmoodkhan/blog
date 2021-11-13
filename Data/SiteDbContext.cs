@@ -5,6 +5,10 @@ using blogs.Data;
 
 namespace blogs.Data {
     public class SiteDbContext : DbContext {
+        
+        public DbSet<Category> Categories { get; set; } = null!;
+        public DbSet<Article> Articles { get; set; } = null!;
+
         public SiteDbContext(DbContextOptions options)
             : base(options)
         {
@@ -16,8 +20,6 @@ namespace blogs.Data {
             modelBuilder.Seed();
         }
 
-        public DbSet<Category> Categories { get; set; }
-        public DbSet<Article> Articles { get; set; }
         
     }
 }

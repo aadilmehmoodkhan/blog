@@ -6,7 +6,7 @@ namespace blogs.Model {
         public long Id { get; set; }
 
         [Required, StringLength(4000)]
-        public string TextContent { get; set; }
+        public string? TextContent { get; set; }
 
         [Required]
         public int Order { get; set; }

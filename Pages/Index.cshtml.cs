@@ -25,8 +25,6 @@ namespace blogs.Pages
             this.context = context;
         }
 
-
-
         public void OnGet()
         {
             context.Database.EnsureCreated();
